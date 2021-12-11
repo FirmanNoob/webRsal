@@ -14,9 +14,9 @@ class CategoriController extends Controller
      */
     public function index()
     {
-        // $categori = Categori::latest()->get();
+        $categori = Categori::latest()->get();
 
-        return view('categori.index');
+        return view('categori.index',compact('categori'));
     }
 
     /**
@@ -69,7 +69,7 @@ class CategoriController extends Controller
     {
         $categori = Categori::find($id);
 
-        return view('categori1.edit', compact('categori'));
+        return view('categori.edit', compact('categori'));
     }
 
     /**

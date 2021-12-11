@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{asset('template/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{asset('template/plugins/daterangepicker/daterangepicker.css')}}">
+  @yield('header')
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('template/plugins/summernote/summernote-bs4.min.css')}}">
 </head>
@@ -94,5 +95,7 @@
 <script src="{{asset('template/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('template/dist/js/pages/dashboard.js')}}"></script>
+
+@yield('footer')
 </body>
 </html>

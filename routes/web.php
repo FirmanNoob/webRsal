@@ -23,10 +23,10 @@ Route::get('/','FrontController@index');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard','DashboardController@index');
-    Route::get('/artikel','ArtikelController@index');
-    Route::get('/categori','CategoriController@index');
-    // Route::resource('categori', 'CategoriController');
-    // Route::resource('artikel', 'ArtikelController');
+    // Route::get('/artikel','ArtikelController@index');
+    // Route::get('/categori','CategoriController@index');
+    Route::resource('categori', 'CategoriController');
+    Route::resource('artikel', 'ArtikelController');
 });
 
 

@@ -36,7 +36,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
+            <a href="/dashboard" class="nav-link {{  request()->is('dashboard') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/categori" class="nav-link">
+            <a href="/categori" class="nav-link {{  request()->is('categori') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Categori
@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="pages/widgets.html" class="nav-link ">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Artikel
