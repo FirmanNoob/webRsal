@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+@section('title','Categori')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->

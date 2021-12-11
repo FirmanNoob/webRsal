@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('template/plugins/fontawesome-free/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
@@ -37,12 +39,34 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="doctors.html" class="nav-link">Doctors</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item active"><a href="index.html" class="nav-link">Beranda</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">Tentang Kami</a></li>
+	          <li class="nav-item"><a href="services.html" class="nav-link">Pelayanan Publik</a></li>
+	          <li class="nav-item"><a href="doctors.html" class="nav-link">Jadwal Dokter</a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">Pengaduan Masyarakat</a></li>
+	          <!-- <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kontak
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Indikator Mutu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
 	          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
 	        </ul>
 	      </div>
@@ -51,26 +75,26 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('images/bg_1.jpg');">
+      <div class="slider-item" style="background-image: url('images/Slider.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
             <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Modern Dentistry in a Calm and Relaxed Environment</h1>
-              <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Alur Pelayanan Pasien</h1>
+              <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Alur Pelayanan Pasien</p>
               <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary px-4 py-3">Make an Appointment</a></p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url('images/bg_2.jpg');">
+      <div class="slider-item" style="background-image: url('images/Jadwal.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
             <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Modern Achieve Your Desired Perfect Smile</h1>
-              <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Jadwal Pelayanan Dokter</h1>
+              <p class="mb-4">Jadwal Dokter Rsal dr.Mintoharjdo</p>
               <p><a href="#" class="btn btn-primary px-4 py-3">Make an Appointment</a></p>
             </div>
           </div>
@@ -83,22 +107,22 @@
     		<div class="row no-gutters">
     			<div class="col-md-3 color-1 p-4">
     				<h3 class="mb-4">Emergency Cases</h3>
-    				<p>A small river named Duden flows by their place and supplies</p>
-    				<span class="phone-number">+ (123) 456 7890</span>
+    				<p>Memberikan pelayanan untuk pasien pengunjung yang memerlukan informasi mengenai pelayanan rumah sakit</p>
+    				<span class="phone-number">Telp. 021-5703081-85</span>
     			</div>
     			<div class="col-md-3 color-2 p-4">
     				<h3 class="mb-4">Opening Hours</h3>
     				<p class="openinghours d-flex">
     					<span>Monday - Friday</span>
-    					<span>8:00 - 19:00</span>
+    					<span>1:00 - 24:00</span>
     				</p>
     				<p class="openinghours d-flex">
     					<span>Saturday</span>
-    					<span>10:00 - 17:00</span>
+    					<span>1:00 - 24:00</span>
     				</p>
     				<p class="openinghours d-flex">
     					<span>Sunday</span>
-    					<span>10:00 - 16:00</span>
+    					<span>1:00 - 24:00</span>
     				</p>
     			</div>
     			<div class="col-md-6 color-3 p-4">
@@ -166,55 +190,59 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-2">Our Service Keeps you Smile</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <h2 class="mb-2">Fasilitas Unggulan</h2>
+            <p>Layanan unggulan yang tersedia di RSAL dr.Mintoharjdo</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-tooth-1"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Teeth Whitening</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-dental-care"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Teeth Cleaning</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-tooth-with-braces"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Quality Brackets</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-anesthesia"></span>
-              </div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">Modern Anesthetic</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-              </div>
-            </div>      
-          </div>
+          <div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(images/baric.jpg);width: 190px;height:225"></div>
+      				<div class="info text-center">
+                <h3>Hyperbaric Center</h3>
+      					<div class="text">
+	        				<p>Terapi Hyperbaric Center adalah bentuk terapi medis dengan dasar ilmu kedokteran yang terbukti secara klinis. Terapi dilakukan dengan cara pemberian oksigen murni kepada peserta terapi hiperbarik yang berada di dalam ruangan bertekanan tinggi, dengan tujuan meningkatkan kadar oksigen dalam darah, plasma dan jaringan.</p>
+	        			</div>
+                <h3><a href="#" class="text-primary">Selengkapnya <i class="fas fa-arrow-right"></i></a></h3>
+      				</div>
+            </div>
+        	</div>
+          <div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(images/angiografi.png);width: 190px;height:225"></div>
+      				<div class="info text-center">
+                <h3>Angiografi (Cathlab)</h3>
+      					<div class="text">
+	        				<p>Kateterisasi jantung (termasuk angiografi) adalah suatu tindakan yg dilakukan di laboratorium kateterisasi jantung guna menentukan diagnostis penyakit jantung & pembuluh darah, selanjutnya dilakukan intervensi non bedah sesuai indikasi melalui pembuluh darah dengan menggunakan kateter.</p>
+	        			</div>
+                <h3><a href="#" class="text-primary">Selengkapnya <i class="fas fa-arrow-right"></i></a></h3>
+      				</div>
+            </div>
+        	</div>
+          <div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(images/aesthetic.png);width: 190px;height:225"></div>
+      				<div class="info text-center">
+                <h3>Aesthetic Center</h3>
+      					<div class="text">
+	        				<p>Aesthetic Center memberikan pelayanan “One Stop Service” untuk berbagai penyakit kulit pada umumnya dan menjaga kesehatan kulit dengan pengobatan dari luar serta melakukan proses peremajaan kulit</p>
+	        			</div>
+                <h3><a href="#" class="text-primary">Selengkapnya <i class="fas fa-arrow-right"></i></a></h3>
+      				</div>
+            </div>
+        	</div>
+          <div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(images/medicalcheckup.png);width: 190px;height:225"></div>
+      				<div class="info text-center">
+                <h3>Medical Check-Up</h3>
+      					<div class="text">
+	        				<p>Medical Check Up memberikan pelayanan uji pemeriksaan kesehatan yang lengkap dan terpadu. Paket medical check up dirancang oleh dokter spesialis dengan memperhatikan kebutuhan masyarakat.</p>
+	        			</div>
+                <h3><a href="#" class="text-primary">Selengkapnya <i class="fas fa-arrow-right"></i></a></h3>
+      				</div>
+            </div>
+        	</div>
         </div>
       </div>
       <div class="container-wrap mt-5">
