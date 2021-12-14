@@ -8,6 +8,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
+	@production
     <link rel="stylesheet" href="{{ secure_asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/animate.css')}}">
     
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="{{ secure_asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+	@endproduction
   </head>
   <body>
     
@@ -905,7 +907,7 @@
     </div>
   </div>
 
-
+@production
   <script src="{{ secure_asset('js/jquery.min.js')}}"></script>
   <script src="{{ secure_asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
   <script src="{{ secure_asset('js/popper.min.js')}}"></script>
@@ -923,6 +925,6 @@
   <script src="{{ secure_asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{{ secure_asset('js/google-map.js')}}"></script>
   <script src="{{ secure_asset('js/main.js')}}"></script>
-    
+    @endproduction
   </body>
 </html>
