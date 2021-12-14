@@ -21,12 +21,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Categori</h1>
+            <h1>Artikel</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Categori</li>
+              <li class="breadcrumb-item active">Artikel</li>
             </ol>
           </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with default features</h3>
-                <a href="#" class="btn btn-primary mr-5">Apa</a>
+                <!-- <a href="#" class="btn btn-primary mr-5">Apa</a> -->
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -44,27 +44,32 @@
                   <thead>
                   <tr>
                     <th>No</th>
+                    <th>Judul</th>
+                    <th>Gambar</th>
                     <th>Nama Kategori</th>
-                    <th>Slug</th>
-                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($categori as $item)
+                  @foreach($artikel as $item)
                   <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->nama_kategori}}</td>
-                    <td>{{$item->slug}}</td>
+                    <td>{{$item->judul}}</td>
+                    @if($item->gambar==null)
+                    <td>Gambar Tidak Ada</td>
+                    @else
+                    <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px"></td>
+                     @endif
+                    <td>{{$item->Kategori->nama_kategori}}</td>
                     <td>
-                        <a href="{{ route('categori.edit',$item->id) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('artikel.edit',$item->id) }}" class="btn btn-info">Edit</a>
 
                         <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
-                                <span class="fa fa-trash"></span>
-                                <form action="{{ route('categori.destroy',$item->id) }}" method="POST">
-                                     @csrf
-                                     @method('DELETE')
-                                </form>
-                         </td>
+                            <span class="fa fa-trash"></span>
+                            <form action="{{ route('artikel.destroy',$item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                    </td>
 </tr>
                     @endforeach
                   </tbody>

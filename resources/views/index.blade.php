@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DentaCare - Free Bootstrap 4 Template by Colorlib</title>
+    <title>RSAL Mintoharjdo Jakarta | Rumah Sakit AL Mintoharjdo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="https://www.rsalmintohardjo.com/wp-content/uploads/2014/09/favicon.png">
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
@@ -32,7 +33,7 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Denta<span>Care</span></a>
+	      <a class="navbar-brand" href="index.html"><img src="{{ asset('images/unnamed.png') }}" width="80" height="80" alt=""></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -108,7 +109,7 @@
     			<div class="col-md-3 color-1 p-4">
     				<h3 class="mb-4">Emergency Cases</h3>
     				<p>Memberikan pelayanan untuk pasien pengunjung yang memerlukan informasi mengenai pelayanan rumah sakit</p>
-    				<span class="phone-number">Telp. 021-5703081-85</span>
+    				<span class="phone-number">Telp. 021-5703081-90</span>
     			</div>
     			<div class="col-md-3 color-2 p-4">
     				<h3 class="mb-4">Opening Hours</h3>

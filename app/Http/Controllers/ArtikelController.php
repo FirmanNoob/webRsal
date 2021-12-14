@@ -17,7 +17,7 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::latest()->get();
 
-        return view('artikel1.index', compact('artikel'));
+        return view('artikel.index', compact('artikel'));
     }
 
     /**
