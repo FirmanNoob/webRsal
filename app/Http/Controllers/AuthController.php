@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Auth; 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -18,6 +21,25 @@ class AuthController extends Controller
             return redirect('/dashboard');
         }
 
+        return redirect('/login');
+    }
+    public function register()
+    {
+        return view('auths.register');
+    }
+    public function create(Request $request)
+    {
+        validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = \App\User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request['password']),
+        ]);
         return redirect('/login');
     }
     public function logout()

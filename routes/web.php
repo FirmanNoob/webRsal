@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/','FrontController@index');
+Route::get('/katasambutan','FrontController@katasambutan');
+Route::get('/visi','FrontController@visi');
 Route::get('/login','AuthController@login')->name('login');
+Route::get('/register','AuthController@register');
+Route::post('/register/create','AuthController@create');
 Route::post('/postlogin','AuthController@postlogin');
 Route::get('/logout','AuthController@logout');
-Route::get('/','FrontController@index');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard','DashboardController@index');
