@@ -9,14 +9,14 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="/" class="nav-link">Beranda</a></li>
 			  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tentang Kami
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/katasambutan">Kata Sambutan Karumkital</a></li>
             <li><a class="dropdown-item" href="/visi">Visi & Misi</a></li>
-            <li><a class="dropdown-item" href="#">Sejarah RS AL Dr.Mintoharjdo</a></li>
-            <li><a class="dropdown-item" href="#">Alur Pelayanan Kesehatan RSAL MTH</a></li>
+            <li><a class="dropdown-item" href="/sejarah">Sejarah RS AL Dr.Mintoharjdo</a></li>
+            <li><a class="dropdown-item" href="/alur">Alur Pelayanan Kesehatan RSAL MTH</a></li>
           </ul>
         </li>
 		<li class="nav-item dropdown" id="myDropdown">

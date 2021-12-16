@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','FrontController@index');
 Route::get('/katasambutan','FrontController@katasambutan');
 Route::get('/visi','FrontController@visi');
+Route::get('/sejarah','FrontController@sejarah');
+Route::get('/alur','FrontController@alur');
 Route::get('/login','AuthController@login')->name('login');
 Route::get('/register','AuthController@register');
 Route::post('/register/create','AuthController@create');

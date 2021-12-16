@@ -18,4 +18,12 @@ class FrontController extends Controller
     {
         return view('front.visi');
     }
+    public function sejarah()
+    {
+        return view('front.sejarah');
+    }
+    public function alur()
+    {
+        return view('front.alur');
+    }
 }
