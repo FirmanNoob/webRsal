@@ -14,7 +14,7 @@
           <img src="{{asset('template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ auth()->user()->name}}</a>
         </div>
       </div>
 
@@ -52,10 +52,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/artikel" class="nav-link ">
+            <a href="/artikel" class="nav-link {{  request()->is('artikel') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Artikel
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/dokter" class="nav-link {{  request()->is('dokter') ? 'active' : ''  }}">
+              <i class="nav-icon fas fa-list-alt"></i>
+              <p>
+                Dokter
               </p>
             </a>
           </li>

@@ -29,10 +29,9 @@ Route::get('/logout','AuthController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard','DashboardController@index');
-    // Route::get('/artikel','ArtikelController@index');
-    // Route::get('/categori','CategoriController@index');
     Route::resource('categori', 'CategoriController');
     Route::resource('artikel', 'ArtikelController');
+    Route::resource('dokter', 'DokterController');
 });
 
 
