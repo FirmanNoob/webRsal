@@ -11,7 +11,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
 @stop
-@section('title','Categori')
+@section('title','Artikel')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -35,8 +35,7 @@
 
         <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-                <!-- <a href="#" class="btn btn-primary mr-5">Apa</a> -->
+              <a href="{{ route('artikel.create') }}" class="btn btn-primary mr-5">Tambah Artikel</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

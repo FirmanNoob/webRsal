@@ -23,11 +23,12 @@
   <link rel="stylesheet" href="{{asset('template/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{asset('template/plugins/daterangepicker/daterangepicker.css')}}">
-  @yield('header')
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('template/plugins/summernote/summernote-bs4.min.css')}}">
+  @yield('header')
+  @yield('header2')
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -97,5 +98,6 @@
 <script src="{{asset('template/dist/js/pages/dashboard.js')}}"></script>
 
 @yield('footer')
+@yield('footer2')
 </body>
 </html>

@@ -9,10 +9,10 @@ class Categori extends Model
     protected $table = 'table_categoris';
     protected $guarded = ['id'];
 
-    public function setSlugAttribute($value)
-    {
-        $this->attributes['slug'] = Str::slug($value, '-');
-    }
+    // public function setSlugAttribute($value)
+    // {
+    //     $this->attributes['slug'] = Str::slug($value, '-');
+    // }
 
     public function getRouteKeyName()
     {

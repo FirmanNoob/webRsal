@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/categori" class="nav-link {{  request()->is('categori') ? 'active' : ''  }}">
+            <a href="/categori" class="nav-link {{  request()->is('categori','categori/create') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Categori

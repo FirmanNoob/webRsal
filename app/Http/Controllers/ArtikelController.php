@@ -29,7 +29,7 @@ class ArtikelController extends Controller
     {
         $categori = Categori::select('id', 'nama_kategori')->get();
 
-        return view('artikel1.create', compact('categori'));
+        return view('artikel.create', compact('categori'));
     }
 
     /**

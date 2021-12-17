@@ -35,8 +35,8 @@
 
         <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-                <a href="#" class="btn btn-primary mr-5">Apa</a>
+                <!-- <h3 class="card-title">DataTable with default features</h3> -->
+                <a href="{{ route('categori.create') }}" class="btn btn-primary mr-5">Tambah Categori</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

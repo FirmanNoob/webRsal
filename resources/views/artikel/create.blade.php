@@ -1,6 +1,10 @@
 @extends('layouts.master')
-
-@section('title','Tambah Categori')
+@section('header2')
+<script type="stylesheet" src="{{ asset('editor.css')}}"></script>
+ <!-- summernote -->
+ <link rel="stylesheet" href="{{asset('template/plugins/summernote/bs5/summernote-bs5.scss')}}">
+@stop
+@section('title','Tambah Artikel')
 @section('content')
 <div class="content-wrapper" style="min-height: 2171.31px;">
     <!-- Content Header (Page header) -->
@@ -8,12 +12,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Validation</h1>
+            <h1>Artikel</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-              <li class="breadcrumb-item active">Validation</li>
+              <li class="breadcrumb-item active">Artikel</li>
             </ol>
           </div>
         </div>
@@ -29,22 +33,34 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Tambah Categori</h3>
+                <h3 class="card-title">Tambah Artikel</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('categori.store')}}" id="quickForm"  novalidate="novalidate" method="POST">
-                  @method('POST')
+              <form action="{{ route('artikel.store')}}" id="quickForm"  novalidate="novalidate" method="POST">
                   @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Categori</label>
-                    <input type="text" name="nama_kategori" class="form-control" placeholder="Masukan Categori" value="{{ old('nama_kategori') }}">
+                    <label for="exampleInputEmail1">Judul</label>
+                    <input type="text" name="judul" class="form-control" placeholder="Masukan Categori" value="{{ old('judul') }}">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Slug</label>
-                    <input type="text" name="slug" class="form-control" placeholder="Masukan Slug" value="{{ old('slug') }}"> 
-                  </div>
+                    <label for="exampleFormControlFile1">Gambar</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                 </div>
+                 <div class="form-group">
+                    <label>Kategori Artikel</label>
+                    <select name="categoris_id" class="form-control">
+                        @foreach ($categori as $item)
+                            <option value={{$item->id}}>{{$item->nama_kategori}}</option>
+                        @endforeach
+                    </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="exampleInputEmail1">Isi Artikel</label>
+                     <!-- /.card-header -->
+							<textarea class="summernote" style="display:none"></textarea> 
+                 </div>
                   <div class="form-group mb-0">
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
@@ -74,16 +90,21 @@
   </div>
 @stop
 @section('footer2')
+<!-- Summernote -->
 <!-- jquery-validation -->
+<script src="{{ asset('template/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{ asset('template/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 <script src="{{ asset('template/plugins/jquery-validation/additional-methods.min.js')}}"></script>
+<script src="{{ asset('template/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script src="{{ asset('template/plugins/summernote/bs5/summernote-bs5.js')}}"></script>
+<script type="text/javascript" src="{{ asset('editor.js')}}"></script>
+<script>
+			$(document).ready(function() {
+				$("#txtEditor").Editor();
+			});
+		</script>
 <script>
 $(function () {
-//   $.validator.setDefaults({
-//     submitHandler: function () {
-//       alert( "Form successful submitted!" );
-//     }
-//   });
   $('#quickForm').validate({
     rules: {
       nama_kategori: {
@@ -121,5 +142,11 @@ $(function () {
     }
   });
 });
+</script>
+<script>
+  $(function () {
+    // Summernote
+    $('.summernote').summernote()
+  });
 </script>
 @stop
