@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use Illuminate\Http\Request;
 use App\Artikel;
 use App\Categori;
@@ -41,25 +42,16 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'judul' => 'required',
-            'body' => 'required|min:10',
-            'gambar' => 'mimes:jpeg,bmp,png',
+        $artikel = Artikel::create([
+            'judul' => \Str::slug($request->judul),
+            'body' => $request->body,
+            'gambar' => $request->gambar,
+            'categoris_id' => $request->categoris_id,
         ]);
-        if (empty($request->file('gambar'))) {
-            Artikel::create([
-                'judul' => \Str::slug($request->judul),
-                'body' => $request->body,
-                //'gambar' => $image,
-                'categoris_id' => $request->categoris_id,
-            ]);
-        } else {
-            Artikel::create([
-                'judul' => \Str::slug($request->judul),
-                'body' => $request->body,
-                'gambar' => $request->file('gambar')->store('artikel'),
-                'categoris_id' => $request->categoris_id,
-            ]);
+        if ($request->hasFile('gambar')) {
+            $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
+            $artikel->gambar =  $request->file('gambar')->getClientOriginalName();
+            $artikel->save();
         }
 
         return redirect()->route('artikel.index');
@@ -88,7 +80,7 @@ class ArtikelController extends Controller
         $categori = Categori::select('id', 'nama_kategori')->get();
         $artikel = Artikel::find($id);
 
-        return view('artikel1.edit', compact('categori', 'artikel'));
+        return view('artikel.edit', compact('categori', 'artikel'));
     }
 
     /**
@@ -101,29 +93,17 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'judul' => 'required',
-            'body' => 'required|min:10',
-            'gambar' => 'mimes:jpeg,bmp,png',
+        $artikel = Artikel::find($id);
+        $artikel->Update([
+            'judul' => \Str::slug($request->judul),
+            'body' => $request->body,
+            'gambar' => $request->gambar,
+            'categoris_id' => $request->categoris_id,
         ]);
-        if (empty($request->file('gambar'))) {
-            $artikel = Artikel::find($id);
-            //Storage::delete($artikel->gambar);
-            $artikel->update([
-                'judul' => \Str::slug($request->judul),
-                'body' => $request->body,
-                //'gambar' => $request->file('gambar')->store('artikel'),
-                'categoris_id' => $request->categoris_id,
-            ]);
-        } else {
-            $artikel = Artikel::find($id);
-            Storage::delete($artikel->gambar);
-            $artikel->update([
-                'judul' => \Str::slug($request->judul),
-                'body' => $request->body,
-                'gambar' => $request->file('gambar')->store('artikel'),
-                'categoris_id' => $request->categoris_id,
-            ]);
+        if ($request->hasFile('gambar')) {
+            $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
+            $artikel->gambar =  $request->file('gambar')->getClientOriginalName();
+            $artikel->save();
         }
 
         return redirect()->route('artikel.index');

@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/categori" class="nav-link {{  request()->is('categori','categori/create') ? 'active' : ''  }}">
+            <a href="/categori" class="nav-link {{  request()->is('categori','categori/create','categori/edit') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Categori
@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/artikel" class="nav-link {{  request()->is('artikel') ? 'active' : ''  }}">
+            <a href="/artikel" class="nav-link {{  request()->is('artikel','artikel/create','categori/edit,$item->id') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Artikel

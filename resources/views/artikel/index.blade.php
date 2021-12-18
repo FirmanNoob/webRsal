@@ -46,6 +46,7 @@
                     <th>Judul</th>
                     <th>Gambar</th>
                     <th>Nama Kategori</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -56,7 +57,7 @@
                     @if($item->gambar==null)
                     <td>Gambar Tidak Ada</td>
                     @else
-                    <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px"></td>
+                    <td><img src="{{ asset('images/'.$item->gambar) }}" width="50px" height="50px"></td>
                      @endif
                     <td>{{$item->Kategori->nama_kategori}}</td>
                     <td>
@@ -77,6 +78,7 @@
                     <th>Browser</th>
                     <th>Platform(s)</th>
                     <th>Engine version</th>
+                    <th>CSS grade</th>
                     <th>CSS grade</th>
                   </tr>
                   </tfoot>
