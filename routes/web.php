@@ -21,6 +21,7 @@ Route::get('/katasambutan','FrontController@katasambutan');
 Route::get('/visi','FrontController@visi');
 Route::get('/sejarah','FrontController@sejarah');
 Route::get('/alur','FrontController@alur');
+Route::get('/blog','FrontController@blog');
 Route::get('/login','AuthController@login')->name('login');
 Route::get('/register','AuthController@register');
 Route::post('/register/create','AuthController@create');

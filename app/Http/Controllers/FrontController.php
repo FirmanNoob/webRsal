@@ -3,12 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categori;
+use App\Artikel;
 
 class FrontController extends Controller
 {
     public function index()
     {
-        return view('front.index');
+        $categori = Categori::all();
+        $artikel = Artikel::latest()->get()->random(3);
+        $artikelall = Artikel::latest()->get();
+        $artikelterkait = Artikel::latest()->limit(3)->get();
+
+        return view('front.index', compact('categori', 'artikel', 'artikelall', 'artikelterkait'));
+        // return view('front.index');
+    }
+    public function blog()
+    {
+        $categori = Categori::all();
+        $artikel = Artikel::latest()->get()->random(3);
+        $artikelall = Artikel::latest()->get();
+        $artikelterkait = Artikel::latest()->limit(4)->get();
+
+        return view('front.blog', compact('categori', 'artikel', 'artikelall', 'artikelterkait'));
+        // return view('front.blog');
     }
     public function katasambutan()
     {
