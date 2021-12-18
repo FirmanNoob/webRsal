@@ -33,7 +33,7 @@
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 		                </div>
 		                <div class="desc pl-sm-3 pl-md-5">
-			                <h3 class="heading"><a href="#">{{ $all->judul }}</a></h3>
+			                <h3 class="heading"><a href="{{ route('artikel.detail',$all->judul) }}">{{ $all->judul }}</a></h3>
 			                <p>{!! $all->body !!}</p>
 			                <p><a href="blog-single.html" class="btn btn-primary btn-outline-primary">Read more</a></p>
 			              </div>
@@ -86,7 +86,7 @@
                     <img src="{{ asset('images/'.$terkait->gambar) }}" alt="" width="78px" height="80px">
                 </a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">{{ $terkait->judul }}</a></h3>
+                  <h3 class="heading"><a href="{{ route('artikel.detail',$terkait->judul) }}">{{ $terkait->judul }}</a></h3>
                   <div class="meta">
                     <div><a href="#"><span class="icon-calendar mr-2"></span>{{ $terkait->created_at->diffForHumans() }}</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>

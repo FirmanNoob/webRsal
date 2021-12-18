@@ -444,7 +444,7 @@
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
                 <div class="desc pl-3">
-	                <h3 class="heading"><a href="#">{{ $a->judul}}</a></h3>
+	                <h3 class="heading"><a href="{{ route('artikel.detail',$a->judul) }}">{{ $a->judul}}</a></h3>
 	              </div>
               </div>
             </div>

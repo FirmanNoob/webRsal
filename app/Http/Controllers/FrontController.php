@@ -28,6 +28,14 @@ class FrontController extends Controller
         return view('front.blog', compact('categori', 'artikel', 'artikelall', 'artikelterkait'));
         // return view('front.blog');
     }
+    public function show(Artikel $blog)
+    {
+        $artikel_detail = $blog;
+        $artikelterkait = Artikel::latest()->get()->random(3);
+        $categori = Categori::withCount('Artikel')->get();
+
+        return view('front.artikel_detail', compact('artikel_detail', 'categori', 'artikelterkait'));
+    }
     public function katasambutan()
     {
         return view('front.katasambutan');
