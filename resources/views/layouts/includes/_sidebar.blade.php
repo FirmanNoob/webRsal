@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/artikel" class="nav-link {{  request()->is('artikel','artikel/create','categori/edit,$item->id') ? 'active' : ''  }}">
+            <a href="/artikel" class="nav-link {{  request()->is('artikel','artikel/create','artikel/edit') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Artikel
