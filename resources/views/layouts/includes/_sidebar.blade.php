@@ -60,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/dokter" class="nav-link {{  request()->is('dokter') ? 'active' : ''  }}">
+            <a href="/dokter" class="nav-link {{  request()->is('dokter','dokter/create') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Dokter

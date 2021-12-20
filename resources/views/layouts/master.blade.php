@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="{{asset('template/plugins/summernote/summernote-bs4.min.css')}}">
   @yield('header')
   @yield('header2')
+  @yield('header3')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -99,5 +100,6 @@
 
 @yield('footer')
 @yield('footer2')
+@yield('footer3')
 </body>
 </html>

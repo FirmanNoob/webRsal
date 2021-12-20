@@ -25,8 +25,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Artikel</li>
+              <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+              <li class="breadcrumb-item active">Dokter</li>
             </ol>
           </div>
         </div>
@@ -35,8 +35,8 @@
 
         <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-                <!-- <a href="#" class="btn btn-primary mr-5">Apa</a> -->
+                <!-- <h3 class="card-title">DataTable with default features</h3> -->
+                <a href="{{ route('dokter.create') }}" class="btn btn-primary mr-5">Tambah Dokter</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -48,6 +48,8 @@
                     <th>Speciality</th>
                     <th>Hari</th>
                     <th>Gambar</th>
+                    <th>From</th>
+                    <th>to</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -55,25 +57,12 @@
                   <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->name}}</td>
-                    <!-- @if($item->gambar==null) -->
-                    <td>{{$item->speciality}}</td>
-                    <!-- @else
-                    <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px"></td>
-                     @endif -->
-                    <td>{{$item->hari}}</td>
-                    <td>{{$item->jadwal}}</td>
+                    <td>{{$item->speciality->speciality}}</td>
+                    <td>{{$item->hari->hari}}</td>
                     <td>{{$item->gambar}}</td>
-                    <!-- <td>
-                        <a href="{{ route('artikel.edit',$item->id) }}" class="btn btn-info">Edit</a>
-
-                        <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
-                            <span class="fa fa-trash"></span>
-                            <form action="{{ route('artikel.destroy',$item->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                            </form>
-                    </td> -->
-</tr>
+                    <td>{{$item->from}}</td>
+                    <td>{{$item->to}}</td>
+                  </tr>
                     @endforeach
                   </tbody>
                   <tfoot>
@@ -81,6 +70,8 @@
                     <th>Browser</th>
                     <th>Platform(s)</th>
                     <th>Engine version</th>
+                    <th>CSS grade</th>
+                    <th>CSS grade</th>
                     <th>CSS grade</th>
                     <th>CSS grade</th>
                   </tr>
