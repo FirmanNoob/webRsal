@@ -16,7 +16,6 @@ class DokterController extends Controller
      */
     public function index()
     {
-        // $dokter = \App\Dokter::all();
         $dokter = Dokter::with('speciality')->get();
         return view('dokter.index',['dokter'=>$dokter]);
     }
@@ -49,8 +48,18 @@ class DokterController extends Controller
             'from' => $request->from,
             'to' => $request->to,
         ]);
+        // $dokter = $request->all();
+
+        // $master = new Dokter;
+        // $master->name = $dokter['name'];
+        // $master->gambar = $dokter['gambar'];
+        // $master->from = $dokter['from'];
+        // $master->to = $dokter['to'];
+        // $master->save();
+
+        // $mhari
         if ($request->hasFile('gambar')) {
-            $request->file('gambar')->move('images/', $request->file('gambar')->getClientOriginalName());
+            $request->file('gambar')->move('images/dokter/', $request->file('gambar')->getClientOriginalName());
             $dokter->gambar =  $request->file('gambar')->getClientOriginalName();
             $dokter->save();
         }

@@ -41,7 +41,7 @@
               </button>
             </div>
           </div>
-          <form action="{{ route('dokter.store')}}" method="POST">
+          <form action="{{ route('dokter.store')}}" enctype="multipart/form-data"  method="POST">
               @method('POST')
               @csrf
           <!-- /.card-header -->

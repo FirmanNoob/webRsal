@@ -11,7 +11,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
 @stop
-@section('title','Categori')
+@section('title','Dokter')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -59,7 +59,12 @@
                     <td>{{$item->name}}</td>
                     <td>{{$item->speciality->speciality}}</td>
                     <td>{{$item->hari->hari}}</td>
-                    <td>{{$item->gambar}}</td>
+                    @if($item->gambar==null)
+                    <td>Gambar Tidak Ada</td>
+                    @else
+                    <td><img src="{{ asset('images/dokter/'.$item->gambar) }}" width="50px" height="50px"></td>
+                     @endif
+                    <!-- <td>{{$item->gambar}}</td> -->
                     <td>{{$item->from}}</td>
                     <td>{{$item->to}}</td>
                   </tr>

@@ -22,7 +22,6 @@
 		<li class="nav-item dropdown" id="myDropdown">
       <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pelayanan Publik</a>
       <ul class="dropdown-menu">
-        <!-- <li> <a class="dropdown-item" href="#"> Pelayanan Medis </a></li> -->
 		<li> <a class="dropdown-item" href="#"> Pelayanan Medis &raquo; </a>
           <ul class="submenu dropdown-menu">
             <li><a class="dropdown-item" href="#">Pelayanan Medis Spelialistik</a></li>
@@ -68,9 +67,9 @@
 		</li>
       </ul>
    		 </li>
-		 <li class="nav-item"><a href="blog.html" class="nav-link">Jadwal Dokter</a></li>
-		 <li class="nav-item"><a href="blog.html" class="nav-link">Pengaduan Masyarakat</a></li>
-		<li class="nav-item"><a href="doctors.html" class="nav-link">Kontak</a></li>
+		 <li class="nav-item"><a href="/jadwaldokter" class="nav-link">Jadwal Dokter</a></li>
+		 <li class="nav-item"><a href="#" class="nav-link">Pengaduan Masyarakat</a></li>
+		<li class="nav-item"><a href="#" class="nav-link">Kontak</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Indikator Mutu

@@ -40,6 +40,10 @@ class FrontController extends Controller
     {
         return view('front.katasambutan');
     }
+    public function jdwldokter()
+    {
+        return view('front.jdwldokter');
+    }
     public function visi()
     {
         return view('front.visi');

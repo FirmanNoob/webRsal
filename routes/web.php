@@ -22,6 +22,7 @@ Route::get('/visi','FrontController@visi');
 Route::get('/sejarah','FrontController@sejarah');
 Route::get('/alur','FrontController@alur');
 Route::get('/blog','FrontController@blog');
+Route::get('/jadwaldokter','FrontController@jdwldokter');
 Route::get('/blog/{blog}','FrontController@show')->name('artikel.detail');
 Route::get('/login','AuthController@login')->name('login');
 Route::get('/register','AuthController@register');
