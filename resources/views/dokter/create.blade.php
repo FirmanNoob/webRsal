@@ -1,9 +1,12 @@
 @extends('layouts.master')
 @section('title','Tambah Dokter')
 @section('header3')
+<link rel="stylesheet" href="{{ asset('template/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ asset('template/plugins/select2/css/select2.min.css')}}">
 <!-- daterange picker -->
 <link rel="stylesheet" href="{{ asset('template/plugins/daterangepicker/daterangepicker.css')}}">
 <link rel="stylesheet" href="{{ asset('template/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+<!-- Select2 -->
 @stop
 @section('content')
  <!-- Content Wrapper. Contains page content -->
@@ -24,6 +27,15 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -57,7 +69,7 @@
                  </div>
                  <div class="form-group">
                     <label>Kategori Artikel</label>
-                    <select name="hari_id" class="form-control">
+                    <select class="form-control" name="hari_id">
                         @foreach ($hari as $item)
                             <option value={{$item->id}}>{{$item->hari}}</option>
                         @endforeach
@@ -65,7 +77,7 @@
                  </div>
                  <div class="form-group">
                     <label>Kategori Artikel</label>
-                    <select name="speciality_id" class="form-control">
+                    <select name="speciality_id" class="form-control select2">
                         @foreach ($speciality as $item)
                             <option value={{$item->id}}>{{$item->speciality}}</option>
                         @endforeach
@@ -104,6 +116,7 @@
 
 @section('footer3')
 <!-- InputMask -->
+<script src="{{ asset('template/plugins/select2/js/select2.full.min.js')}}"></script>
 <script src="{{ asset('template/plugins/moment/moment.min.js')}}"></script>
 <script src="{{ asset('template/plugins/inputmask/jquery.inputmask.min.js')}}"></script>
 <!-- date-range-picker -->
@@ -116,6 +129,12 @@
                 $('#datetimepicker4').datetimepicker({
                     format: 'LT'
                 });
+                $('.select2').select2()
+
+              //Initialize Select2 Elements
+              $('.select2bs4').select2({
+                theme: 'bootstrap4'
+                      })
             });
 </script>
 @stop

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categori;
 use App\Artikel;
+use App\Dokter;
 
 class FrontController extends Controller
 {
@@ -42,7 +43,8 @@ class FrontController extends Controller
     }
     public function jdwldokter()
     {
-        return view('front.jdwldokter');
+        $dokter = Dokter::all();
+        return view('front.jdwldokter',compact('dokter'));
     }
     public function visi()
     {

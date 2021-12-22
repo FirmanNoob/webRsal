@@ -40,6 +40,21 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'name' => 'required|unique:table_dokters',
+            'gambar' => 'required',
+            'hari_id' => 'required',
+            'speciality_id' => 'required',
+            'from' => 'required',
+            'to' => 'required',
+          ];
+          
+          $messages = [
+            'required'  => 'Data :attribute Harus Di Isi.',
+            'unique'    => ':attribute is already used'
+          ];
+          
+        $request->validate($rules,$messages);
         $dokter = Dokter::create([
             'name' => $request->name,
             'gambar' => $request->gambar,
@@ -48,16 +63,6 @@ class DokterController extends Controller
             'from' => $request->from,
             'to' => $request->to,
         ]);
-        // $dokter = $request->all();
-
-        // $master = new Dokter;
-        // $master->name = $dokter['name'];
-        // $master->gambar = $dokter['gambar'];
-        // $master->from = $dokter['from'];
-        // $master->to = $dokter['to'];
-        // $master->save();
-
-        // $mhari
         if ($request->hasFile('gambar')) {
             $request->file('gambar')->move('images/dokter/', $request->file('gambar')->getClientOriginalName());
             $dokter->gambar =  $request->file('gambar')->getClientOriginalName();
@@ -86,7 +91,8 @@ class DokterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dokter = Dokter::find($id);
+        return view('dokter.edit',compact('dokter'));
     }
 
     /**

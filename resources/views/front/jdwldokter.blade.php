@@ -23,7 +23,28 @@
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences</p>
           </div>
         </div>
-<livewire:select />
+        <div class="col-md-12">
+        <table class="table" id="example">
+  <thead>
+    <tr>
+      <!-- <th scope="col">No</th> -->
+      <th scope="col">Name</th>
+      <th scope="col">Lokasi</th>
+      <th scope="col">Poli</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($dokter as $item)
+    <tr>
+      <!-- <th scope="row">1</th> -->
+      <td>{{ $item->name }}</td>
+      <td>RSAL</td>
+      <td>{{ $item->speciality->speciality }}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+</div>
       </div>
         </section>
 @stop

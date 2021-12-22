@@ -11,7 +11,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
 @stop
-@section('title','Dokter')
+@section('title','Jadwal')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -21,12 +21,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Artikel</h1>
+            <h1>Jadwal</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-              <li class="breadcrumb-item active">Dokter</li>
+              <li class="breadcrumb-item active">jadwal</li>
             </ol>
           </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="card">
               <div class="card-header">
                 <!-- <h3 class="card-title">DataTable with default features</h3> -->
-                <a href="{{ route('dokter.create') }}" class="btn btn-primary mr-5">Tambah Dokter</a>
+                <a href="{{ route('jadwal.create') }}" class="btn btn-primary mr-5">Tambah jadwal</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -44,36 +44,21 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Name</th>
-                    <th>Speciality</th>
                     <th>Hari</th>
-                    <th>Gambar</th>
-                    <th>From</th>
-                    <th>to</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($dokter as $item)
+                  @foreach($hari as $item)
                   <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->name}}</td>
-                    <td>{{$item->speciality->speciality}}</td>
-                    <td>{{$item->hari->hari}}</td>
-                    @if($item->gambar==null)
-                    <td>Gambar Tidak Ada</td>
-                    @else
-                    <td><img src="{{ asset('images/dokter/'.$item->gambar) }}" width="50px" height="50px"></td>
-                     @endif
-                    <!-- <td>{{$item->gambar}}</td> -->
-                    <td>{{$item->from}}</td>
-                    <td>{{$item->to}}</td>
+                    <td>{{$item->hari}}</td>
                     <td>
-                        <a href="{{ route('dokter.edit',$item->id) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('jadwal.edit',$item->id) }}" class="btn btn-info">Edit</a>
 
                         <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
                                 <span class="fa fa-trash"></span>
-                                <form action="{{ route('dokter.destroy',$item->id) }}" method="POST">
+                                <form action="{{ route('jadwal.destroy',$item->id) }}" method="POST">
                                      @csrf
                                      @method('DELETE')
                                 </form>
@@ -85,12 +70,7 @@
                   <tr>
                     <th>Browser</th>
                     <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
+                    <th>Platform(s)</th>
                   </tr>
                   </tfoot>
                 </table>

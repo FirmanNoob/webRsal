@@ -60,14 +60,36 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/dokter" class="nav-link {{  request()->is('dokter','dokter/create') ? 'active' : ''  }}">
+            <a href="/dokter" class="nav-link {{ request()->is('dokter','dokter/create') ? 'active' : '' }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Dokter
               </p>
             </a>
           </li>
-          
+          <li class="nav-item menu-open">
+            <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/jadwal" class="nav-link {{ request()->is('jadwal','jadwal/create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jadwal</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/speciality" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Speciality</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
