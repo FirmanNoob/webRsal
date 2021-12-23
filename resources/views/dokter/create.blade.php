@@ -59,7 +59,7 @@
           <!-- /.card-header -->
           <div class="card-body">
           <!-- Color Picker -->
-          <div class="form-group">
+                  <div class="form-group">
                     <label for="exampleInputEmail1">Nama Dokter</label>
                     <input type="text" name="name" class="form-control" placeholder="Masukan Categori" value="{{ old('name') }}">
                   </div>
@@ -93,7 +93,6 @@
                     </div>
                 </div>
             </div>
-                <!-- time Picker -->
                 <div class="form-group">
                 <label>To :</label>
                 <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
@@ -103,6 +102,10 @@
                     </div>
                 </div>
               </div>
+              <div class="form-group">
+                <a href="#" class="addjadwal btn btn-primary" style="float: right;">Tambah Jadwal</a>
+              </div>
+              <div class="jadwal"></div>
             </div>
             <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -122,11 +125,27 @@
 <!-- date-range-picker -->
 <script src="{{ asset('template/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <script type="text/javascript">
+          $('.addjadwal').on('click',function(){
+              addjadwal();
+          });
+          function addjadwal(){
+            var jadwal = '<div><div class="form-group"><label>Kategori Artikel</label><select class="form-control" name="hari_id">@foreach ($hari as $item)<option value={{$item->id}}>{{$item->hari}}</option>@endforeach</select></div><div class="form-group"><label>From :</label><div class="input-group date" id="datetimepicke5" data-target-input="nearest"><input type="text" name="from" class="form-control datetimepicker-input" data-target="#datetimepicke5"/><div class="input-group-append" data-target="#datetimepicke5" data-toggle="datetimepicker"><div class="input-group-text"><i class="far fa-clock"></i></div></div></div></div><div class="form-group"><label>To :</label><div class="input-group date" id="datetimepicker6" data-target-input="nearest"><input type="text" name="to" class="form-control datetimepicker-input" data-target="#datetimepicker6"/><div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker"><div class="input-group-text"><i class="far fa-clock"></i></div></div></div></div><div class="form-group"><a href="#" class="remove btn btn-primary" style="float: right;">Tambah Jadwal</a></div></div>';
+            $('.jadwal').append(jadwal);
+          };
+          $('.remove').on('click',function(){
+            $(this).parent().parent().parent().remove();
+          });
             $(function () {
                 $('#datetimepicker3').datetimepicker({
                     format: 'LT'
                 });
                 $('#datetimepicker4').datetimepicker({
+                    format: 'LT'
+                });
+                $('#datetimepicker5').datetimepicker({
+                    format: 'LT'
+                });
+                $('#datetimepicker6').datetimepicker({
                     format: 'LT'
                 });
                 $('.select2').select2()
