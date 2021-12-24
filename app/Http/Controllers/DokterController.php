@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use \App\Days;
 use \App\Speciality;
 use \App\Dokter;
+use \App\Join;
 
 class DokterController extends Controller
 {
@@ -16,8 +17,8 @@ class DokterController extends Controller
      */
     public function index()
     {
-        $dokter = Dokter::with('speciality')->get();
-        return view('dokter.index',['dokter'=>$dokter]);
+        $dokter = Dokter::with('join')->get();
+        return view('dokter.index',['dokter' =>$dokter]);
     }
 
     /**
@@ -40,29 +41,51 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
-        $rules = [
-            'name' => 'required|unique:table_dokters',
-            'gambar' => 'required',
-            'hari_id' => 'required',
-            'speciality_id' => 'required',
-            'from' => 'required',
-            'to' => 'required',
-          ];
+        // $rules = [
+        //     'name' => 'required|unique:table_dokters',
+        //     'gambar' => 'required',
+        //     'hari_id' => 'required',
+        //     'speciality_id' => 'required',
+        //     'from' => 'required',
+        //     'to' => 'required',
+        //   ];
           
-          $messages = [
-            'required'  => 'Data :attribute Harus Di Isi.',
-            'unique'    => ':attribute is already used'
-          ];
+        //   $messages = [
+        //     'required'  => 'Data :attribute Harus Di Isi.',
+        //     'unique'    => ':attribute is already used'
+        //   ];
           
-        $request->validate($rules,$messages);
-        $dokter = Dokter::create([
-            'name' => $request->name,
-            'gambar' => $request->gambar,
-            'hari_id' => $request->hari_id,
-            'speciality_id' => $request->speciality_id,
-            'from' => $request->from,
-            'to' => $request->to,
-        ]);
+        // $request->validate($rules,$messages);
+
+        // $dokter = Dokter::create([
+        //     'name' => $request->name,
+        //     'gambar' => $request->gambar,
+        //     'hari_id' => $request->hari_id,
+        //     'speciality_id' => $request->speciality_id,
+        //     'from' => $request->from,
+        //     'to' => $request->to,
+        // ]);
+
+        $data = $request->all();
+        $dokter = new Dokter;
+        $dokter->name = $data['name'];
+        $dokter->gambar = $data['gambar'];
+        $dokter->speciality_id = $data['speciality_id'];
+        $dokter->save();
+
+        if (count($request->hari_id) > 0 ) {
+            foreach($data['hari_id'] as $item => $value){
+                $data2 = array(
+                    'dokter_id' => $dokter->id,
+                    'hari_id' => $data['hari_id'][$item],
+                    'from' => $data['from'][$item],
+                    'to' => $data['to'][$item],
+                );
+                Join::create($data2);
+            }
+        }
+
+
         if ($request->hasFile('gambar')) {
             $request->file('gambar')->move('images/dokter/', $request->file('gambar')->getClientOriginalName());
             $dokter->gambar =  $request->file('gambar')->getClientOriginalName();

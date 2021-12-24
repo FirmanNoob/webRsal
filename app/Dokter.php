@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Days;
+use App\Join;
 use App\Speciality;
 
 use Illuminate\Database\Eloquent\Model;
@@ -12,10 +13,7 @@ class Dokter extends Model
     protected $fillable = [
         'name',
         'gambar',
-        'hari_id',
-        'speciality_id',
-        'from',
-        'to'
+        'speciality_id'
     ];
 
     public function Hari()
@@ -26,5 +24,10 @@ class Dokter extends Model
     public function Speciality()
     {
         return $this->belongsTo(Speciality::class, 'speciality_id', 'id');
+    }
+
+    public function Join()
+    {
+        return $this->hasMany(Join::class,'dokter_id');
     }
 }

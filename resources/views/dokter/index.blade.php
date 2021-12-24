@@ -54,18 +54,21 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($dokter as $item)
+                    @foreach($dokter as $item)
                   <tr>
-                    <td>{{$loop->iteration}}</td>
+                    <td>{{$loop->iteration }}</td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->speciality->speciality}}</td>
-                    <td>{{$item->hari->hari}}</td>
+                    <td>
+                      @foreach($item->join as $cust)
+                        {{$cust->dokter_id}}
+                      @endforeach
+                    </td>
                     @if($item->gambar==null)
                     <td>Gambar Tidak Ada</td>
                     @else
                     <td><img src="{{ asset('images/dokter/'.$item->gambar) }}" width="50px" height="50px"></td>
-                     @endif
-                    <!-- <td>{{$item->gambar}}</td> -->
+                    @endif
                     <td>{{$item->from}}</td>
                     <td>{{$item->to}}</td>
                     <td>
@@ -79,7 +82,7 @@
                                 </form>
                          </td>
                   </tr>
-                    @endforeach
+                  @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
