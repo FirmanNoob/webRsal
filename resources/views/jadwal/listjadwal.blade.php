@@ -47,54 +47,26 @@
                     <th>Name</th>
                     <th>Speciality</th>
                     <th>Hari</th>
-                    <th>Gambar</th>
-                    <th>From</th>
-                    <th>to</th>
-                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach($siswa as $item)
-                    <tr>
+                    @foreach($dokter as $item)
+                  <tr>
                     <td>{{$loop->iteration }}</td>
                     <td>{{$item->name}}</td>
-                    <td>
-                      @foreach($siswa as $days)
-                        {{$days->hari}}
-                      @endforeach
-                    </td>
-                    @if($item->gambar==null)
-                    <td>Gambar Tidak Ada</td>
-                    @else
-                    <td><img src="{{ asset('images/dokter/'.$item->gambar) }}" width="50px" height="50px"></td>
-                    @endif
-                    <td>
-                      @foreach($siswa as $days)
-                        {{$days->hari}}
-                      @endforeach</td>
-                    <td>{{$item->to}}</td>
-                    <td>
-                        <a href="{{ route('dokter.edit',$item->id) }}" class="btn btn-info">Edit</a>
-
-                        <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
-                                <span class="fa fa-trash"></span>
-                                <form action="{{ route('dokter.destroy',$item->id) }}" method="POST">
-                                     @csrf
-                                     @method('DELETE')
-                                </form>
-                         </td>
-                        </tr>
-                        @endforeach
+                    @foreach($item->hari as $days)
+                    <td>{{$days->hari_id}}</td>
+                    <td>{{$days->from}}</td>
+                    <td>{{$days->to}}</td>
+                    @endforeach
+                  </tr>
+                  @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>Browser</th>
                     <th>Platform(s)</th>
                     <th>Engine version</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
                     <th>CSS grade</th>
                   </tr>
                   </tfoot>

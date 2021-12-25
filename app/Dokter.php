@@ -6,6 +6,7 @@ use App\Join;
 use App\Speciality;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Dokter extends Model
 {
@@ -16,9 +17,18 @@ class Dokter extends Model
         'speciality_id'
     ];
 
-    public function Hari()
+    // public function Hari()
+    // {
+    //     return $this->belongsToMany(Days::class, 'joindokterstodays', 'days_id');
+    // }
+    
+    public function allData()
     {
-        return $this->belongsTo(Days::class, 'hari_id', 'id');
+        return DB::table('joindokterstodays')
+            ->leftJoin('table_dokters', 'table_dokters.id', '=', 'joindokterstodays.dokter_id')
+            ->leftJoin('table_days', 'table_days.id', '=', 'joindokterstodays.days_id')
+            ->get();
+
     }
 
     public function Speciality()

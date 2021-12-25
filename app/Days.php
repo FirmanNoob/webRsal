@@ -12,6 +12,6 @@ class Days extends Model
 
     public function Hari()
     {
-        return $this->hasMany(Join::class, 'hari_id', 'id');
+        return $this->hasMany(Join::class, 'days_id');
     }
 }

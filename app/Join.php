@@ -17,7 +17,7 @@ class Join extends Model
     ];
     public function Dokter()
     {
-        return $this->hasMany(Dokter::class, 'd', 'id');
+        return $this->hasMany(Dokter::class, 'joindokterstodays', 'days_id');
     }
     public function Hari()
     {

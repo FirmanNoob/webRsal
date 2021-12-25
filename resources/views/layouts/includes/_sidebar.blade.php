@@ -71,7 +71,7 @@
             <a class="nav-link {{ request()->is('jadwal') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Tambah Jadwal
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -86,6 +86,12 @@
                 <a href="/speciality" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Speciality</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/showJadwal" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Show Jadwal</p>
                 </a>
               </li>
             </ul>

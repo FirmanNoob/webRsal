@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Days;
+use App\Dokter;
 
 class JadwalController extends Controller
 {
@@ -43,6 +44,12 @@ class JadwalController extends Controller
         $master->save();
 
         return redirect()->route('jadwal.index');
+    }
+
+    public function listjadwal()
+    {
+        $dokter = Dokter::with('hari')->get();
+        return view('jadwal.listjadwal',compact('dokter'));
     }
 
     /**

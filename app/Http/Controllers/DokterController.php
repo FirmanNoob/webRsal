@@ -15,10 +15,19 @@ class DokterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->Dokter = new Dokter();
+    }
+
     public function index()
     {
-        $dokter = Dokter::with('join')->get();
-        return view('dokter.index',['dokter' =>$dokter]);
+        $dokter = Dokter::all();
+        // $dokter2 = Dokter::with('join')->get();
+        $data = [
+            'siswa' => $this->Dokter->allData(),
+        ];
+        return view('dokter.index',$data,compact('dokter'));
     }
 
     /**

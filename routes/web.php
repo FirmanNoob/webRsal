@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('artikel', 'ArtikelController');
     Route::resource('dokter', 'DokterController');
     Route::resource('jadwal', 'jadwalController');
+    Route::get('/showJadwal','JadwalController@listjadwal');
 });
 
 
