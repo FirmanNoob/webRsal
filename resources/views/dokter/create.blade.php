@@ -69,7 +69,7 @@
                  </div>
                  <div class="form-group">
                     <label>Hari</label>
-                    <select class="form-control" name="hari_id[]">
+                    <select class="form-control" name="days_id[]">
                         @foreach ($hari as $item)
                             <option value={{$item->id}}>{{$item->hari}}</option>
                         @endforeach
@@ -129,7 +129,7 @@
               addjadwal();
           });
           function addjadwal(){
-            var jadwal = '<div><div class="form-group"><label>Hari</label><select class="form-control" name="hari_id[]">@foreach ($hari as $item)<option value={{$item->id}}>{{$item->hari}}</option>@endforeach</select></div><div class="form-group"><label>From :</label><div class="input-group date"><input type="time" name="from[]" class="form-control"/></div></div></div><div class="form-group"><label>To :</label><div class="input-group date"><input type="time" name="to[]" class="form-control"/></div></div></div></div>';
+            var jadwal = '<div><div class="form-group"><label>Hari</label><select class="form-control" name="days_id[]">@foreach ($hari as $item)<option value={{$item->id}}>{{$item->hari}}</option>@endforeach</select></div><div class="form-group"><label>From :</label><div class="input-group date"><input type="time" name="from[]" class="form-control"/></div></div></div><div class="form-group"><label>To :</label><div class="input-group date"><input type="time" name="to[]" class="form-control"/></div></div></div></div>';
             $('.jadwal').append(jadwal);
           };
           $('.remove').on('click',function(){

@@ -58,4 +58,8 @@ class FrontController extends Controller
     {
         return view('front.alur');
     }
+    public function pmspesialistik()
+    {
+        return view('front.pmspesialistik');
+    }
 }

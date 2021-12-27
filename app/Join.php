@@ -11,13 +11,13 @@ class Join extends Model
     protected $table = 'joindokterstodays';
     protected $fillable = [
         'dokter_id',
-        'hari_id',
+        'days_id',
         'from',
         'to'
     ];
     public function Dokter()
     {
-        return $this->hasMany(Dokter::class, 'joindokterstodays', 'days_id');
+        return $this->belongsTo(Dokter::class,'dokter_id','id');
     }
     public function Hari()
     {

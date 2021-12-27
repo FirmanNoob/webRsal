@@ -46,21 +46,25 @@
                     <th>No</th>
                     <th>Name</th>
                     <th>Speciality</th>
-                    <th>Hari</th>
                     <th>Gambar</th>
-                    <th>From</th>
-                    <th>to</th>
+                    <th>Gambar</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach($siswa as $item)
+                    @foreach($dokter as $item)
                     <tr>
                     <td>{{$loop->iteration }}</td>
-                    <td>{{$item->name}}</td>
+                    
                     <td>
-                      @foreach($siswa as $days)
-                        {{$days->hari}}
+                      {{$item->name}}
+                    </td>
+                    <td>
+                      {{$item->speciality->speciality}}
+                    </td>
+                    <td>
+                      @foreach($siswa as $data)
+                      {{$data->hari}}
                       @endforeach
                     </td>
                     @if($item->gambar==null)
@@ -69,11 +73,7 @@
                     <td><img src="{{ asset('images/dokter/'.$item->gambar) }}" width="50px" height="50px"></td>
                     @endif
                     <td>
-                      @foreach($siswa as $days)
-                        {{$days->hari}}
-                      @endforeach</td>
-                    <td>{{$item->to}}</td>
-                    <td>
+                      <a href="{{ route('dokter.show',$item->id) }}" class="btn btn-warning">View</a>
                         <a href="{{ route('dokter.edit',$item->id) }}" class="btn btn-info">Edit</a>
 
                         <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
@@ -91,9 +91,6 @@
                     <th>Browser</th>
                     <th>Platform(s)</th>
                     <th>Engine version</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
                     <th>CSS grade</th>
                     <th>CSS grade</th>
                   </tr>

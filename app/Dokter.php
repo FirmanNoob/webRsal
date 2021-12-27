@@ -7,6 +7,7 @@ use App\Speciality;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 
 class Dokter extends Model
 {
@@ -27,8 +28,8 @@ class Dokter extends Model
         return DB::table('joindokterstodays')
             ->leftJoin('table_dokters', 'table_dokters.id', '=', 'joindokterstodays.dokter_id')
             ->leftJoin('table_days', 'table_days.id', '=', 'joindokterstodays.days_id')
+            ->distinct()
             ->get();
-
     }
 
     public function Speciality()

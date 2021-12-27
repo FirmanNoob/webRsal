@@ -7,6 +7,7 @@ use \App\Days;
 use \App\Speciality;
 use \App\Dokter;
 use \App\Join;
+use Illuminate\Support\Facades\DB;
 
 class DokterController extends Controller
 {
@@ -22,8 +23,7 @@ class DokterController extends Controller
 
     public function index()
     {
-        $dokter = Dokter::all();
-        // $dokter2 = Dokter::with('join')->get();
+        $dokter = Dokter::with('join')->get();
         $data = [
             'siswa' => $this->Dokter->allData(),
         ];
@@ -82,11 +82,11 @@ class DokterController extends Controller
         $dokter->speciality_id = $data['speciality_id'];
         $dokter->save();
 
-        if (count($request->hari_id) > 0 ) {
-            foreach($data['hari_id'] as $item => $value){
+        if (count($request->days_id) > 0 ) {
+            foreach($data['days_id'] as $item => $value){
                 $data2 = array(
                     'dokter_id' => $dokter->id,
-                    'hari_id' => $data['hari_id'][$item],
+                    'days_id' => $data['days_id'][$item],
                     'from' => $data['from'][$item],
                     'to' => $data['to'][$item],
                 );
@@ -112,7 +112,11 @@ class DokterController extends Controller
      */
     public function show($id)
     {
-        //
+        $dokter = Dokter::with('join')->where('id',$id)->first();
+        $data = DB::table('joindokterstodays')
+        ->join('table_days', 'table_days.id', '=', 'joindokterstodays.days_id')
+        ->get();
+        return view('dokter.show',compact('dokter','data'));
     }
 
     /**

@@ -20,11 +20,11 @@
           </ul>
         </li>
 		<li class="nav-item dropdown" id="myDropdown">
-      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pelayanan Publik</a>
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pelayanan Publik</a>
       <ul class="dropdown-menu">
-		<li> <a class="dropdown-item" href="#"> Pelayanan Medis &raquo; </a>
+		<li> <a class="dropdown-item"> Pelayanan Medis &raquo; </a>
           <ul class="submenu dropdown-menu">
-            <li><a class="dropdown-item" href="#">Pelayanan Medis Spelialistik</a></li>
+            <li><a class="dropdown-item" href="/pelayananmedisspesialistik">Pelayanan Medis Spelialistik</a></li>
             <li><a class="dropdown-item" href="#">Pelayanan Medis Khusus &raquo; </a>
               <ul class="submenu dropdown-menu">
                 <li><a class="dropdown-item" href="#">Hyperbaric Center</a></li>
