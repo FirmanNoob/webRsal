@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  @production
   <head>
     <title>RSAL Mintoharjdo Jakarta | Rumah Sakit AL Mintoharjdo</title>
     <meta charset="utf-8">
@@ -8,27 +9,28 @@
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/animate.css')}}">
     
     <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('template/plugins/fontawesome-free/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+  <link rel="stylesheet" href="{{ secure_asset('template/plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/magnific-popup.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/aos.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/ionicons.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/jquery.timepicker.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/datatables.min.css')}}"/>
+    <link rel="stylesheet" href="{{ secure_asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/datatables.min.css')}}"/>
     @livewireStyles
+    @endproduction
   </head>
   <body>
     
@@ -170,26 +172,27 @@
       </div>
     </div>
   </div> -->
-  <script src="{{ asset('js/jquery.min.js')}}"></script>
-  <script src="{{ asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
-  <script src="{{ asset('js/popper.min.js')}}"></script>
-  <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-  <script src="{{ asset('js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{ asset('js/jquery.waypoints.min.js')}}"></script>
-  <script src="{{ asset('js/jquery.stellar.min.js')}}"></script>
-  <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
-  <script src="{{ asset('js/aos.js')}}"></script>
-  <script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{ asset('js/bootstrap-datepicker.js')}}"></script>
-  <script src="{{ asset('js/jquery.animateNumber.min.js')}}"></script>
-  <script src="{{ asset('js/jquery.timepicker.min.js')}}"></script>
-  <script src="{{ asset('js/scrollax.min.js')}}"></script>
+  @production
+  <script src="{{ secure_asset('js/jquery.min.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
+  <script src="{{ secure_asset('js/popper.min.js')}}"></script>
+  <script src="{{ secure_asset('js/bootstrap.min.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery.easing.1.3.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery.waypoints.min.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery.stellar.min.js')}}"></script>
+  <script src="{{ secure_asset('js/owl.carousel.min.js')}}"></script>
+  <script src="{{ secure_asset('js/aos.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{ secure_asset('js/bootstrap-datepicker.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery.animateNumber.min.js')}}"></script>
+  <script src="{{ secure_asset('js/jquery.timepicker.min.js')}}"></script>
+  <script src="{{ secure_asset('js/scrollax.min.js')}}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{{ asset('js/google-map.js')}}"></script>
-  <script src="{{ asset('js/main.js')}}"></script>
-  <script src="{{ asset('js/datatables.min.js')}}"></script>
+  <script src="{{ secure_asset('js/google-map.js')}}"></script>
+  <script src="{{ secure_asset('js/main.js')}}"></script>
+  <script src="{{ secure_asset('js/datatables.min.js')}}"></script>
   @yield('footer')
   @livewireScripts
-
+@endproduction
   </body>
 </html>

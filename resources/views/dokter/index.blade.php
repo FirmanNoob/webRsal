@@ -63,9 +63,7 @@
                       {{$item->speciality->speciality}}
                     </td>
                     <td>
-                      @foreach($siswa as $data)
-                      {{$data->hari}}
-                      @endforeach
+                      {{$item->hari}}
                     </td>
                     @if($item->gambar==null)
                     <td>Gambar Tidak Ada</td>

@@ -8,7 +8,7 @@
           <div class="row slider-text align-items-end">
             <div class="col-md-7 col-sm-12 ftco-animate mb-5">
               <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="/">Home</a></span> <span>dokter</span></p>
-              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Jadwal Dokter</h1>
+              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Pelayanan Medis Spesialistik</h1>
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <h2 class="mb-3">Meet Our Experience Dentist</h2>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences</p>
           </div>
-        </div>
+      </div>
       <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">

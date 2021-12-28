@@ -50,6 +50,10 @@ class FrontController extends Controller
     {
         return view('front.visi');
     }
+    public function pmspesialistik()
+    {
+        return view('front.pmspesialistik');
+    }
     public function sejarah()
     {
         return view('front.sejarah');
@@ -58,8 +62,92 @@ class FrontController extends Controller
     {
         return view('front.alur');
     }
-    public function pmspesialistik()
+    public function hyperbaric()
     {
-        return view('front.pmspesialistik');
+        return view('front.hyperbaric');
+    }
+    public function angiografi()
+    {
+        return view('front.angiografi');
+    }
+    public function mcheckup()
+    {
+        return view('front.mcheckup');
+    }
+    public function aesthetic()
+    {
+        return view('front.aesthetic');
+    }
+    public function melati()
+    {
+        return view('front.melati');
+    }
+    public function voluntary()
+    {
+        return view('front.voluntary');
+    }
+    public function penunjangm()
+    {
+        return view('front.penunjangm');
+    }
+    public function audiometri()
+    {
+        return view('front.audiometri');
+    }
+    public function rekammdis()
+    {
+        return view('front.rekammdis');
+    }
+    public function kamarbersalin()
+    {
+        return view('front.kamarbersalin');
+    }
+    public function sterilisasi()
+    {
+        return view('front.sterilisasi');
+    }
+    public function rawatinap()
+    {
+        return view('front.rawatinap');
+    }
+    public function ambulance()
+    {
+        return view('front.ambulance');
+    }
+    public function cs()
+    {
+        return view('front.cs');
+    }
+    public function kereta()
+    {
+        return view('front.kereta');
+    }
+    public function laundry()
+    {
+        return view('front.laundry');
+    }
+    public function prohani()
+    {
+        return view('front.prohani');
+    }
+    public function jenazah()
+    {
+        return view('front.jenazah');
+    }
+    public function pendaftaran()
+    {
+        return view('front.pendaftaran');
+    }
+    public function penjagaan()
+    {
+        return view('front.penjagaan');
+    }
+    public function depbangdiklat()
+    {
+        return view('front.depbangdiklat');
+    }
+    public function pengelolaanlimbah()
+    {
+        return view('front.pengelolaanlimbah');
     }
 }

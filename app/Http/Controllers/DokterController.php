@@ -23,11 +23,11 @@ class DokterController extends Controller
 
     public function index()
     {
-        $dokter = Dokter::with('join')->get();
-        $data = [
-            'siswa' => $this->Dokter->allData(),
-        ];
-        return view('dokter.index',$data,compact('dokter'));
+        $dokter = Dokter::with('hari')->get();
+        // $data = [
+        //     'siswa' => $this->Dokter->allData(),
+        // ];
+        return view('dokter.index',compact('dokter'));
     }
 
     /**

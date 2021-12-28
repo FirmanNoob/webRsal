@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-use App\Days;
 use App\Join;
 use App\Speciality;
 
@@ -18,10 +17,10 @@ class Dokter extends Model
         'speciality_id'
     ];
 
-    // public function Hari()
-    // {
-    //     return $this->belongsToMany(Days::class, 'joindokterstodays', 'days_id');
-    // }
+    public function Hari()
+    {
+        return $this->belongsToMany('\App\Dokter')->using('\App\Days');
+    }
     
     public function allData()
     {
