@@ -37,7 +37,7 @@
     @foreach($dokter as $item)
     <tr>
       <!-- <th scope="row">1</th> -->
-      <td>{{ $item->name }}</td>
+      <td><a href="/showdokter/{{$item->id}}"> {{ $item->name }}</a></td>
       <td>RSAL</td>
       <td>{{ $item->speciality->speciality }}</td>
     </tr>

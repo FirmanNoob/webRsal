@@ -30,7 +30,7 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="{{ asset('template/dist/img/user4-128x128.jpg')}}"
+                       src="/images/dokter/{{ $dokter->gambar}}"
                        alt="User profile picture">
                 </div>
 
@@ -72,7 +72,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                        @foreach($data as $item)
+                        @foreach($dokter->days as $item)
                         <td>{{$loop->iteration}}</td>
                         <td>{{$item->hari}}</td>
                         @endforeach

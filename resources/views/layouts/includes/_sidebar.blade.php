@@ -83,15 +83,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/speciality" class="nav-link">
+                <a href="/speciality" class="nav-link {{ request()->is('speciality','speciality/create') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Speciality</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/showJadwal" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Show Jadwal</p>
                 </a>
               </li>
             </ul>

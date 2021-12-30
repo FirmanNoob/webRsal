@@ -46,6 +46,7 @@ Route::get('/penjagaan','FrontController@penjagaan');
 Route::get('/depbangdiklat','FrontController@depbangdiklat');
 Route::get('/pengelolaanlimbah','FrontController@pengelolaanlimbah');
 Route::get('/ambulance','FrontController@ambulance');
+Route::get('/showdokter/{id}','FrontController@showdokter')->name('showdokter');
 Route::get('/blog/{blog}','FrontController@show')->name('artikel.detail');
 Route::get('/login','AuthController@login')->name('login');
 Route::get('/register','AuthController@register');
@@ -59,6 +60,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('artikel', 'ArtikelController');
     Route::resource('dokter', 'DokterController');
     Route::resource('jadwal', 'jadwalController');
+    Route::resource('speciality', 'SpecialityController');
     Route::get('/showJadwal','JadwalController@listjadwal');
 });
 

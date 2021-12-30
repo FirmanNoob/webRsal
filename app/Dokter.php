@@ -1,8 +1,8 @@
 <?php
 
 namespace App;
-use App\Join;
 use App\Speciality;
+use App\Join;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -17,18 +17,9 @@ class Dokter extends Model
         'speciality_id'
     ];
 
-    public function Hari()
+    public function Days()
     {
-        return $this->belongsToMany('\App\Dokter')->using('\App\Days');
-    }
-    
-    public function allData()
-    {
-        return DB::table('joindokterstodays')
-            ->leftJoin('table_dokters', 'table_dokters.id', '=', 'joindokterstodays.dokter_id')
-            ->leftJoin('table_days', 'table_days.id', '=', 'joindokterstodays.days_id')
-            ->distinct()
-            ->get();
+        return $this->belongsToMany('\App\Days');
     }
 
     public function Speciality()
@@ -38,6 +29,6 @@ class Dokter extends Model
 
     public function Join()
     {
-        return $this->hasMany(Join::class,'dokter_id');
+        return $this->hasOne('\App\Join');
     }
 }

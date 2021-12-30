@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Categori;
 use App\Artikel;
 use App\Dokter;
+use App\Days;
+use App\Join;
 
 class FrontController extends Controller
 {
@@ -149,5 +151,11 @@ class FrontController extends Controller
     public function pengelolaanlimbah()
     {
         return view('front.pengelolaanlimbah');
+    }
+    public function showdokter($id)
+    {
+        $dokter = Dokter::with(['join'])->where('id',$id)->first();
+        // dd($dokter);
+        return view('front.showdokter',compact('dokter'));
     }
 }

@@ -8,16 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Join extends Model
 {
-    protected $table = 'joindokterstodays';
+    protected $table = 'days_dokter';
     protected $fillable = [
         'dokter_id',
         'days_id',
         'from',
         'to'
     ];
+    // public function Dokter()
+    // {
+    //     return $this->hasOne('\App\Dokter');
+    // }
     public function Dokter()
     {
-        return $this->belongsTo(Dokter::class,'dokter_id','id');
+        return $this->belongsTo('\App\Dokter');
     }
     public function Hari()
     {

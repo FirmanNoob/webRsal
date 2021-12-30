@@ -10,8 +10,8 @@ class Days extends Model
 {
     protected $table = 'table_days';
 
-    public function Hari()
+    public function Dokter()
     {
-        return $this->hasMany(Join::class, 'days_id');
+        return $this->belongsToMany('\App\Dokter');
     }
 }

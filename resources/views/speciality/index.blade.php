@@ -11,7 +11,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css')}}">
 @stop
-@section('title','Dokter')
+@section('title','Speciality')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -21,12 +21,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Artikel</h1>
+            <h1>speciality</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-              <li class="breadcrumb-item active">Dokter</li>
+              <li class="breadcrumb-item active">Speciality</li>
             </ol>
           </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="card">
               <div class="card-header">
                 <!-- <h3 class="card-title">DataTable with default features</h3> -->
-                <a href="{{ route('dokter.create') }}" class="btn btn-primary mr-5">Tambah Dokter</a>
+                <a href="{{ route('speciality.create') }}" class="btn btn-primary mr-5">Tambah speciality</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -44,56 +44,33 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Name</th>
                     <th>Speciality</th>
-                    <th>Gambar</th>
-                    <th>Gambar</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach($dokter as $item)
-                    <tr>
-                    <td>{{$loop->iteration }}</td>
-                    
+                  @foreach($speciality as $item)
+                  <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$item->speciality}}</td>
                     <td>
-                      {{$item->name}}
-                    </td>
-                    <td>
-                      {{$item->speciality->speciality}}
-                    </td>
-                    <td>
-                      @foreach($item->days as $hari)
-                      {{$hari->hari}}
-                      @endforeach
-                    </td>
-                    @if($item->gambar==null)
-                    <td>Gambar Tidak Ada</td>
-                    @else
-                    <td><img src="{{ asset('images/dokter/'.$item->gambar) }}" width="50px" height="50px"></td>
-                    @endif
-                    <td>
-                      <a href="{{ route('dokter.show',$item->id) }}" class="btn btn-warning">View</a>
-                        <a href="{{ route('dokter.edit',$item->id) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('speciality.edit',$item->id) }}" class="btn btn-info">Edit</a>
 
                         <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
                                 <span class="fa fa-trash"></span>
-                                <form action="{{ route('dokter.destroy',$item->id) }}" method="POST">
+                                <form action="{{ route('speciality.destroy',$item->id) }}" method="POST">
                                      @csrf
                                      @method('DELETE')
                                 </form>
                          </td>
-                        </tr>
-                        @endforeach
+                  </tr>
+                    @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>Browser</th>
                     <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
-                    <th>CSS grade</th>
+                    <th>Platform(s)</th>
                   </tr>
                   </tfoot>
                 </table>

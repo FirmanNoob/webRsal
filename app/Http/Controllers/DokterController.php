@@ -7,7 +7,6 @@ use \App\Days;
 use \App\Speciality;
 use \App\Dokter;
 use \App\Join;
-use Illuminate\Support\Facades\DB;
 
 class DokterController extends Controller
 {
@@ -16,17 +15,14 @@ class DokterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->Dokter = new Dokter();
-    }
+    // public function __construct()
+    // {
+    //     $this->Dokter = new Dokter();
+    // }
 
     public function index()
     {
-        $dokter = Dokter::with('hari')->get();
-        // $data = [
-        //     'siswa' => $this->Dokter->allData(),
-        // ];
+        $dokter = Dokter::with('days')->get();
         return view('dokter.index',compact('dokter'));
     }
 
@@ -112,11 +108,8 @@ class DokterController extends Controller
      */
     public function show($id)
     {
-        $dokter = Dokter::with('join')->where('id',$id)->first();
-        $data = DB::table('joindokterstodays')
-        ->join('table_days', 'table_days.id', '=', 'joindokterstodays.days_id')
-        ->get();
-        return view('dokter.show',compact('dokter','data'));
+        $dokter = Dokter::with('days')->where('id',$id)->first();
+        return view('dokter.show',compact('dokter'));
     }
 
     /**
