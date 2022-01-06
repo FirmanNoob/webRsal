@@ -13,7 +13,7 @@ class CreateJoindokterstodaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('joindokterstodays', function (Blueprint $table) {
+        Schema::create('days_dokter', function (Blueprint $table) {
             $table->id();
             $table->integer('dokter_id');
             $table->integer('hari_id');
