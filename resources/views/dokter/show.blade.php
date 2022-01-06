@@ -74,7 +74,13 @@
                     <tr>
                         @foreach($dokter->days as $item)
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->hari}}</td>
+                        <td>{{$item->hari}}
+                          {{$item->from}}
+                          @foreach($dokter->join as $join)
+                          {{$join->from}}
+                        @endforeach
+                        </td>
+                        
                         @endforeach
                     </tr>
                   </tbody>

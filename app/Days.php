@@ -10,8 +10,8 @@ class Days extends Model
 {
     protected $table = 'table_days';
 
-    public function Dokter()
-    {
-        return $this->belongsToMany('\App\Dokter');
-    }
+    // public function Dokter()
+    // {
+    //     return $this->belongsToMany('\App\Dokter');
+    // }
 }

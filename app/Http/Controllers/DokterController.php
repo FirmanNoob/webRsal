@@ -7,6 +7,7 @@ use \App\Days;
 use \App\Speciality;
 use \App\Dokter;
 use \App\Join;
+use Illuminate\Support\Facades\DB;
 
 class DokterController extends Controller
 {
@@ -108,7 +109,9 @@ class DokterController extends Controller
      */
     public function show($id)
     {
-        $dokter = Dokter::with('days')->where('id',$id)->first();
+        $dokter = Dokter::with('join')->where('id',$id)->first();
+        // dd($dokter);
+        // var_dump($dokter);
         return view('dokter.show',compact('dokter'));
     }
 

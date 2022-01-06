@@ -21,14 +21,18 @@ class Dokter extends Model
     {
         return $this->belongsToMany('\App\Days');
     }
+    public function Join()
+    {
+        return $this->hasMany('\App\Join');
+    }
 
     public function Speciality()
     {
         return $this->belongsTo(Speciality::class, 'speciality_id', 'id');
     }
 
-    public function Join()
-    {
-        return $this->hasOne('\App\Join');
-    }
+    // public function Join()
+    // {
+    //     return $this->hasOne('\App\Join');
+    // }
 }

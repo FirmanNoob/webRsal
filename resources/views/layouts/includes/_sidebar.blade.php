@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/categori" class="nav-link {{  request()->is('categori','categori/create','categori/edit') ? 'active' : ''  }}">
+            <a href="/categori" class="nav-link {{  request()->is('categori','categori/create','categori*/edit') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Categori
@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/artikel" class="nav-link {{  request()->is('artikel','artikel/create','artikel/edit') ? 'active' : ''  }}">
+            <a href="/artikel" class="nav-link {{  request()->is('artikel','artikel/create','artikel*/edit') ? 'active' : ''  }}">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Artikel
@@ -60,7 +60,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/dokter" class="nav-link {{ request()->is('dokter','dokter/create') ? 'active' : '' }}">
+            <a href="/dokter" class="nav-link {{ (request()->is('dokter','dokter/create','dokter*/edit','dokter*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Dokter
@@ -77,7 +77,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/jadwal" class="nav-link {{ request()->is('jadwal','jadwal/create') ? 'active' : '' }}">
+                <a href="/jadwal" class="nav-link {{ request()->is('jadwal','jadwal/create','jadwal*/edit') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jadwal</p>
                 </a>
