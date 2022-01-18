@@ -17,12 +17,8 @@ class CreateTableDokters extends Migration
             $table->id();
             $table->string('name');
             $table->string('gambar');
-            $table->unsignedBigInteger('hari_id');
             $table->unsignedBigInteger('speciality_id');
-            $table->foreign('hari_id')->references('id')->on('table_days');
             $table->foreign('speciality_id')->references('id')->on('table_specialitys');
-            $table->string('from');
-            $table->string('to');
             $table->timestamps();
         });
     }
