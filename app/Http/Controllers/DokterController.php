@@ -81,13 +81,13 @@ class DokterController extends Controller
 
         if (count($request->days_id) > 0 ) {
             foreach($data['days_id'] as $item => $value){
-                $data2 = array(
+                $datas = array(
                     'dokter_id' => $dokter->id,
                     'days_id' => $data['days_id'][$item],
                     'from' => $data['from'][$item],
                     'to' => $data['to'][$item],
                 );
-                Join::create($data2);
+                Join::create($datas);
             }
         }
 
