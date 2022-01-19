@@ -59,7 +59,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('categori', 'CategoriController');
     Route::resource('artikel', 'ArtikelController');
     Route::resource('dokter', 'DokterController');
-    Route::resource('jadwal', 'jadwalController');
+    Route::resource('jadwal', 'JadwalController');
     Route::resource('speciality', 'SpecialityController');
     Route::get('/showJadwal','JadwalController@listjadwal');
 });
