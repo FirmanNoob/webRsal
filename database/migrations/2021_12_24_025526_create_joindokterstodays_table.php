@@ -16,7 +16,7 @@ class CreateJoindokterstodaysTable extends Migration
         Schema::create('days_dokter', function (Blueprint $table) {
             $table->id();
             $table->integer('dokter_id');
-            $table->integer('hari_id');
+            $table->integer('days_id');
             $table->string('from');
             $table->string('to');
             $table->timestamps();
